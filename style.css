@@ -1,283 +1,241 @@
-/* Reset some default styles */
+/* Global Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Pacifico", cursive, "Arial", sans-serif;
-  background: linear-gradient(to bottom, #000000, #000033, #000066);
-  min-height: 100vh;
-  overflow: hidden;
-  position: relative;
-  color: white;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Mountains of Christmas", cursive;
-}
-
-p {
-  font-family: "Pacifico", cursive;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #cccccc;
-}
-
-.container {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
-}
-
-h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  color: #ffcc00;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #ffeb3b;
-}
-
-/* Snowflake animation */
-@keyframes fall {
-  0% {
-    transform: translateY(-100vh);
-    opacity: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  50% {
-    opacity: 1;
+  
+  /* Body styling with Tailwind utility classes */
+  body {
+    font-family: "Pacifico", cursive, "Arial", sans-serif;
+    background: linear-gradient(to bottom, #000000, #000033, #000066);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    color: white;
   }
-  100% {
-    transform: translateY(100vh);
-    opacity: 0;
+  
+  /* Heading styling with Tailwind */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Mountains of Christmas", cursive;
   }
-}
-
-.snowflake {
-  position: absolute;
-  top: -10px;
-  background-color: white;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  animation: fall 10s linear infinite;
-  opacity: 0.8;
-}
-
-.snowflake:nth-child(odd) {
-  width: 8px;
-  height: 8px;
-  animation-duration: 7s;
-  animation-delay: calc(1s * var(--i)); /* out of sync */
-}
-
-.snowflake:nth-child(even) {
-  width: 12px;
-  height: 12px;
-  animation-duration: 15s;
-  animation-delay: calc(1.5s * var(--i)); /* out of sync */
-}
-
-.snow-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-/* Santa & Reindeer */
-.santa-reindeer {
-  position: absolute;
-  top: 5%; /* Move it further towards the top */
-  left: 5%;
-  animation: santa-fly 15s linear infinite;
-  z-index: 1;
-  transform: rotate(-25deg); /* Rotate 25 degrees anticlockwise */
-}
-
-@keyframes santa-fly {
-  0% {
-    transform: translateX(-150%);
+  
+  /* Paragraph styling with Tailwind */
+  p {
+    font-family: "Pacifico", cursive;
+    font-size: 1.5rem; /* Tailwind equivalent: text-xl */
+    margin-bottom: 2rem; /* Tailwind equivalent: mb-8 */
+    color: #cccccc;
   }
-  100% {
-    transform: translateX(120%);
+  
+  /* Container */
+  .container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
   }
-}
-
-.santa-reindeer img {
-  max-width: 500px;
-  width: 100%;
-}
-
-/* Christmas Tree */
-.tree {
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-  max-width: 400px;
-}
-
-@media (max-width: 768px) {
-}
-/* Lights */
-.lights {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.light {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: red;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-  animation: blink 1.5s infinite alternate;
-}
-
-.light:nth-child(2) {
-  background-color: green;
-  animation-delay: 0.3s;
-}
-
-.light:nth-child(3) {
-  background-color: blue;
-  animation-delay: 0.6s;
-}
-
-.light:nth-child(4) {
-  background-color: yellow;
-  animation-delay: 0.9s;
-}
-
-.light:nth-child(5) {
-  background-color: orange;
-  animation-delay: 1.2s;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-
-/* Footer */
-footer {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  font-size: 1.5rem;
-  color: #ffffff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+  
+  /* h1 styling */
   h1 {
-    font-size: 2rem;
+    font-size: 4rem; /* Tailwind equivalent: text-4xl */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    color: #ffcc00;
   }
-
+  
+  /* h2 styling */
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Tailwind equivalent: text-xl */
+    margin-bottom: 2rem;
+    color: #ffeb3b;
   }
-
+  
+  /* Snowflake animation */
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: fall 10s linear infinite;
+    opacity: 0.8;
+  }
+  
+  .snowflake:nth-child(odd) {
+    width: 8px;
+    height: 8px;
+    animation-duration: 7s;
+    animation-delay: calc(1s * var(--i)); /* out of sync */
+  }
+  
+  .snowflake:nth-child(even) {
+    width: 12px;
+    height: 12px;
+    animation-duration: 15s;
+    animation-delay: calc(1.5s * var(--i)); /* out of sync */
+  }
+  
+  /* Snow container */
+  .snow-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  /* Santa & Reindeer */
+  .santa-reindeer {
+    position: absolute;
+    top: 5%; /* Move it further towards the top */
+    left: 5%;
+    animation: santa-fly 15s linear infinite;
+    z-index: 1;
+    transform: rotate(-25deg); /* Rotate 25 degrees anticlockwise */
+  }
+  
+  @keyframes santa-fly {
+    0% {
+      transform: translateX(-150%);
+    }
+    100% {
+      transform: translateX(120%);
+    }
+  }
+  
   .santa-reindeer img {
-    max-width: 350px;
+    max-width: 500px;
+    width: 100%;
   }
-
+  
+  /* Christmas Tree */
   .tree {
-    max-width: 150px;
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    max-width: 400px;
   }
-
-  .light {
-    width: 40px;
-    height: 40px;
+  
+  @media (max-width: 768px) {
+    /* Mobile responsive for tree and reindeer */
+    .tree {
+      max-width: 150px;
+    }
+  
+    .santa-reindeer img {
+      max-width: 350px;
+    }
+  
+    .light {
+      width: 40px;
+      height: 40px;
+    }
+  
+    footer {
+      font-size: 1rem;
+    }
   }
-
+  
+  /* Footer styling */
   footer {
-    font-size: 1rem;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    font-size: 1.5rem; /* Tailwind equivalent: text-2xl */
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   }
-}
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.2rem;
+    }
+  
+    footer {
+      font-size: 1rem;
+    }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
+    .tree {
+      max-width: 300px;
+    }
   }
-
-  h2 {
-    font-size: 1rem;
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    h2 {
+      font-size: 1rem;
+    }
+  
+    footer {
+      font-size: 0.9rem;
+    }
   }
-
-  .santa-reindeer img {
-    max-width: 250px;
+  
+  /* Snowflake styling */
+  .snow {
+    position: fixed;
+    color: white;
+    font-size: 10px; /* Tailwind equivalent: text-xs */
+    pointer-events: none;
+    animation: snowfall linear infinite;
   }
-
-  .tree {
-    max-width: 80%;
+  
+  .snow::before {
+    content: "❄"; /* Snowflake Unicode Character */
+    font-size: inherit;
   }
-
-  .light {
-    width: 30px;
-    height: 30px;
+  
+  .footer-image {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    z-index: 1;
   }
-
-  footer {
-    font-size: 0.9rem;
+  
+  .footer-image img {
+    width: 100px;
+    height: auto;
   }
-}
-
-.snow {
-  position: fixed;
-  color: white;
-  font-size: 10px;
-  pointer-events: none;
-  animation: snowfall linear infinite;
-}
-
-.snow::before {
-  content: "❄"; /* Snowflake Unicode Character */
-  font-size: inherit;
-}
-
-.footer-image {
-  position: absolute;
-  bottom: 10px; /* Adjust as needed for spacing from the bottom */
-  left: 5px; /* Adjust as needed for spacing from the left */
-  z-index: 1;
-}
-
-.footer-image img {
-  width: 100px; /* Adjust the size of the image */
-  height: auto;
-}
-
-@keyframes snowfall {
-  0% {
-    transform: translateY(-100vh) translateX(0);
-    opacity: 1;
+  
+  /* Snowfall animation */
+  @keyframes snowfall {
+    0% {
+      transform: translateY(-100vh) translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(20px);
+      opacity: 0.3;
+    }
   }
-  100% {
-    transform: translateY(100vh) translateX(20px);
-    opacity: 0.3;
-  }
-}
+  
