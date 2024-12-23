@@ -29,13 +29,13 @@ p {
 }
 
 .container {
-  height: 100vh;
+  height: 80%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 h1 {
